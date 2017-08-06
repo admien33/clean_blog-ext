@@ -1,0 +1,24 @@
+{% comment %}<!--
+  param in :  
+    include.model_sort_ref
+  var global :
+    !! note specific collection, hard coded : site.data.clean_blog
+  param out:
+    raw_items_page
+    array_pages
+    array_pages_size
+
+ -->{% endcomment %}
+
+{% assign raw_items_page = '' %}
+{% assign array_pages = '' %}
+{% assign array_pages_size = '' %}
+
+{% include coll_ext/config/common-param.html %}
+{% for list in site.data.clean_blog.list-detail-items %}
+  {% include coll_ext/extra_utils/extract_pages/filter_list_model.html 
+    model_list=list
+    model_ref=include.model_sort_ref 
+  %}  
+{% endfor %}
+{% include coll_ext/extra_utils/extract_pages/raw_items_pages.html %}

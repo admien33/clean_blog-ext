@@ -1,0 +1,8 @@
+
+{% if page.url contains '/contact' %}
+	<script data-main="{{site.baseurl}}/assets-js/app-clean_blog-contact" src="{{site.baseurl}}/assets-js/vendor/require.2.2.0.min.js" async defer></script>
+{% else %}
+	<script data-main="{{site.baseurl}}/assets-js/app-clean_blog-default" src="{{site.baseurl}}/assets-js/vendor/require.2.2.0.min.js" async defer></script>	
+{% endif %}
+
+

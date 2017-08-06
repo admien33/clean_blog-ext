@@ -1,0 +1,26 @@
+{% comment %}<!--
+  param in :
+    include.template    
+
+  var globale
+  
+
+  param out:
+		add include template call
+
+ -->{% endcomment %}
+
+{% if include.template == 'form_contact_list' %}
+
+	{% include templates/form_contact_list.html %}
+	
+{% elsif include.template == 'paginate_posts_last5' %}
+
+	{% include templates/paginate_posts_last5.html %}
+
+{% elsif include.template == 'slider_pages' %}
+
+	{% include templates/slider_pages.html %}
+
+{% endif %}
+

@@ -1,0 +1,15 @@
+{%comment%}<!--
+param in :
+  include.char
+param out :
+  char_is_num : true, false
+ -->{%endcomment%}
+
+{% assign char_is_num = false %}
+{% assign char2num = include.char | plus: 0 %}
+{% for iter in (0..9) %}	
+	{% if iter == char2num %}
+		{% assign char_is_num = true %}
+		{% break %}
+	{% endif %}
+{% endfor %}

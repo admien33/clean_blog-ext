@@ -1,0 +1,8 @@
+_site
+.sass-cache
+.asset-cache
+.jekyll-metadata
+node_modules
+gulp/JSinput/js
+gulp/JSoutput/js
+include/coll_ext_test/

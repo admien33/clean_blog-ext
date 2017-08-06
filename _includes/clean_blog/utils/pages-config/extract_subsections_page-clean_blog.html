@@ -1,0 +1,36 @@
+{% comment %}
+<!--
+  param in:
+    include.model_ref
+    include.name_id
+    include.path_subsection
+
+  param out :
+    raw_items
+    array_items
+    array_items_size
+
+-->
+{% endcomment %}
+
+
+{% assign raw_items = '' %}
+{% assign array_items = '' %}
+{% assign array_items_size = '' %}
+
+{% assign path_coll_ext = '' %}
+
+{% include coll_ext/config/common-param.html %}
+
+{% for list in site.data.clean_blog.list-detail-items %}
+  {% include coll_ext/extra_utils/extract_pages/filter_list_model.html 
+    model_list=list
+    model_ref=include.model_ref
+  %}  
+{% endfor %}
+
+{% assign path_current_subsection = path_coll_ext | append: include.path_subsection %}
+
+{% include coll_ext/extra_utils/extract_pages/raw_items_subsections_page.html 
+  path_subsection_ref=path_current_subsection
+%}

@@ -1,0 +1,59 @@
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+  {% comment %}
+  <meta name="description" content="{{ site.description }}">
+  <title>
+    {% if page.title %}
+      {{ page.title }} - {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  {% endcomment %}
+  {%comment%}<!-- for google -->{%endcomment%}
+  {% include clean_blog/meta_seo.html %}
+
+  
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+
+  <style>
+    {% asset_source bootstrap-clean_blog-crit.css.scss %}
+  </style>
+  <script>
+    {% asset_source plugins/loadCSS.min.js %}
+    loadCSS("{% asset_path bootstrap-clean_blog-noncrit.css %}");  
+    loadCSS("{% asset_path css/font-awesome.4.7.0.css %}");     
+  </script>
+  <noscript>
+    <link href="{% asset_path bootstrap-clean_blog-noncrit.css %}" rel="stylesheet">   
+    <link href="{% asset_path css/font-awesome.4.7.0.css %}" rel="stylesheet">     
+  </noscript>
+
+  
+
+  {% comment %} 
+  - add google font family link from _coll_clean_blog/site-config/font-family/
+  {% endcomment %}
+  {% include clean_blog/utils/site-config/extract_head_google-font.html %}
+
+  
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  {% feed_meta %}
+
+</head>

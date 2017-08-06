@@ -1,0 +1,56 @@
+---
+layout: default-clean_blog
+---
+
+{% comment %}
+{% assign page_name_id = '' %}
+{% assign page_src_img = '' %}
+{% assign page_subtitle = '' %}
+{% assign page_description = '' %}
+{% assign page_content = '' %}
+{% assign page_template_page = '' %}
+{% assign page_header_page = '' %}
+{% endcomment %}
+{% include clean_blog/utils/pages-config/filter_current_page.html 
+  url=page.url
+  root_page='home'
+%}
+
+
+
+<!-- Page Header : background-image -->
+
+{% if page_header_page == 'background_image' %}
+  {% include templates/pages_header/background_image.html 
+    src_img=page_src_img
+    subtitle=page_subtitle
+    description=page_description
+  %}
+{% elsif page_header_page == 'default_slider' %}
+  {% include templates/pages_header/default_slider.html 
+    name_id=page_name_id
+  %}
+{% endif %}
+
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{ page_content }}
+      
+      {% include templates/include_templates.html 
+        template=page_template_page
+      %}
+     
+    </div>
+  </div>
+</div>
+
+<hr>
+
+    
+
+    
+   
+

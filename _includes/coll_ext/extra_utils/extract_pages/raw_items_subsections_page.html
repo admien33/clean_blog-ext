@@ -1,0 +1,45 @@
+{% comment %}<!--
+  param in :
+  	include.path_subsection_ref
+	  internal, from filter_list_model.htl on same folder
+
+  var globale 
+  	extension_item from _includes/coll_ext/config/common-param.html
+  	extension_section
+
+  param out:
+  	raw_items
+  	array_items
+  	array_items_size
+   
+ -->{% endcomment %}
+
+{% assign items_display_subsection_size = -1 %}
+{% if items_display_subsection != delim %}
+  {% assign items_display_subsection_part = items_display_subsection | remove_first: delim | split: delim  %}
+  {% assign items_display_subsection_size = items_display_subsection_part.size | minus: 1 %}
+{% endif%}
+
+{% assign filtered_items = delim %}
+
+{% for index_item in (0..items_display_subsection_size) %}
+  {% assign index_array_part = items_display_subsection_part[index_item] | plus: 0  %}
+  {% assign item_tmp = raw_items[index_array_part] %}
+  {% comment %}<!-- filtering subsections with dist sup on list -->{% endcomment %}
+	{% include coll_ext/utils/extract_from_url/last-part-url-current-item.html
+	  current_item_url=item_tmp.url
+	  extension_section=extension_section
+	  extension_item=extension_item
+	%}
+	{% unless current_item_is_section %}		
+		{% assign item_part = last_part_url_curren_item | replace: '.html','.md' %}
+		{% assign path_section_current = item_tmp.path | replace: item_part,'' | append: '/'  %}
+		{% if path_section_current == include.path_subsection_ref  %}
+			{% comment %} add item to output array{% endcomment %}
+			{% assign filtered_items = filtered_items | append: index_array_part | append: delim %}
+		{% endif %}
+	{% endunless %}
+{% endfor %}
+
+{% assign array_items = filtered_items | remove_first: delim | split: delim %}
+{% assign array_items_size = array_items.size | minus: 1 %}

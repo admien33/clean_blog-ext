@@ -1,0 +1,41 @@
+{% comment %}<!--
+  param in :
+	  internal, from filter_list_model.htl on same folder
+
+  var globale 
+
+  param out:
+  	raw_items_page
+  	array_pages
+  	array_pages_size
+   
+ -->{% endcomment %}
+ 
+{% assign period_info_subsection = site.data.coll_ext.config.display_list-items.config.period_info_subsection | plus: 0 %}
+{% assign offset_index_subsection = site.data.coll_ext.config.display_list-items.config.offset_index_subsection | plus: 0 %}
+
+{% if info_section_subsection != delim %}
+  {% assign info_section_subsection_part = info_section_subsection | remove_first: delim | split: delim  %}
+  {% assign info_section_subsection_size = info_section_subsection_part.size %}
+{% endif%}
+
+{% assign nb_max_subsection = info_section_subsection_size | divided_by: period_info_subsection %}
+{% assign index_sub_ref = 0  %}
+
+{% assign current_sections = delim %}
+
+{% for iter_subsections in (1..nb_max_subsection)  %}
+
+  {% comment %}<!-- info current subsection -->{% endcomment %}
+  {% assign index_tmp = index_sub_ref | plus: offset_index_subsection %}
+  {% assign index_subsection = info_section_subsection_part[index_tmp] | plus: 0 %}
+
+  {% assign current_sections = current_sections | append : index_subsection | append: delim %}
+
+  {% assign index_sub_ref = index_sub_ref | plus: period_info_subsection %}
+
+{% endfor %}
+
+{% assign raw_items_page = raw_items %}
+{% assign array_pages = current_sections | remove_first: delim | split: delim %}
+{% assign array_pages_size = nb_max_subsection | minus: 1 %}

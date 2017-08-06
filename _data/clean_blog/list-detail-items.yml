@@ -1,0 +1,93 @@
+- id: 'pages-order'
+  title: 'pages-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'pages-config'
+  force_display_coll_ext_model: 'agency_sections'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: []
+    filter-subsections: []
+
+- id: 'default-page-subsections-order'
+  title: 'default-page-subsections-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'pages-config'
+  force_display_coll_ext_model: 'clean_blog_page_subsections'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: []
+    filter-subsections: []
+
+- id: 'default-page-subsections-date-publication'
+  title: 'default-page-subsections-date-publication'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'pages-config'
+  force_display_coll_ext_model: 'clean_blog_page_subsections'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'date-publication'
+    nb-max-item-per-section: 12
+    choose-subsections: []
+    filter-subsections: []
+
+
+
+
+- id: 'navigation-order'
+  title: 'navigation-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'site-config'
+  force_display_coll_ext_model: 'agency_default'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: ['navigation']
+    filter-subsections: []
+
+- id: 'footer-order'
+  title: 'footer-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'site-config'
+  force_display_coll_ext_model: 'agency_default'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: ['footer']
+    filter-subsections: []
+
+- id: 'google-font-order'
+  title: 'google-font-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'site-config'
+  force_display_coll_ext_model: 'agency_default'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: ['google-font']
+    filter-subsections: []
+
+- id: 'palette-color-order'
+  title: 'palette-color-order'
+  collection: 'coll_clean_blog'
+  force_display_coll_ext: true
+  force_display_coll_ext_section: 'site-config'
+  force_display_coll_ext_model: 'agency_default'
+  sort :
+    # defined in /_data/coll_ext/config/sort_site-documents.yml
+    filter: 'order'
+    nb-max-item-per-section: 12
+    choose-subsections: ['palette-color']
+    filter-subsections: []
