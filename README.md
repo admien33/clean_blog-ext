@@ -17,8 +17,9 @@ Note : [on Wordpress version](https://github.com/deviodigital/cleanblog), end-us
 
 #### Demo editor
 
+- [duplicate and edit a post then update production site](https://drive.google.com/open?id=0B8fHSjalmbNEODBRZ0lXZl9udlk)
 
-
+- [add a new page with content then update navigation header](https://drive.google.com/open?id=0B8fHSjalmbNEbC1Qd0laaW5RNmc)
 
 
 #### Limitations :
@@ -31,7 +32,7 @@ Note : [on Wordpress version](https://github.com/deviodigital/cleanblog), end-us
 	
 	 - add new pages with custom sections and custom design. 
 
-	 - webpacked assets, webfont loader
+	 - webpacked assets, webfont loader. [Page speed insight](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fd2m.tech%2Fclean_agency_demo01%2F&tab=desktop). 
 
 	 - angularjs used to render detailed articles, blog section.
 
