@@ -3,7 +3,7 @@ Demo : [clean_blog-ext](https://d2m.tech/clean_blog-ext/)
 
 ### From [StartBoostrap Clean-blog Theme](https://startbootstrap.com/template-overviews/clean-blog/).
 
-[Current Jekyll version](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll), allows end-users to edit/add post displayed on home page. Other pages can only be modified on html, yml files.
+[Current Jekyll version](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll) allows end-users to edit/add post displayed on home page. Other pages can only be modified on html, yml files.
 Note : [on Wordpress version](https://github.com/deviodigital/cleanblog), end-users can access all contents, design.
 
 
